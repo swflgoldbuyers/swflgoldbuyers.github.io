@@ -1,124 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SWFL Gold & Silver Buyers</title>
-<meta name="description" content="Sell gold, silver, coins and bullion in Fort Myers, Estero, Bonita Springs, Naples and Cape Coral.">
+<meta name="description" content="Sell gold, silver, coins and bullion in Southwest Florida.">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;background:#101010;color:#fff;line-height:1.6}
-.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),url('IMG_0105.jpeg');background-size:cover;background-position:center;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px}
-.hero h1{font-size:64px;color:#d4af37;margin-bottom:15px}
-.hero p{font-size:24px;max-width:850px;margin:auto}
-.btn{display:inline-block;margin-top:25px;padding:16px 30px;background:#d4af37;color:#000;text-decoration:none;font-weight:bold;border-radius:10px}
-.phonebar{background:#d4af37;color:#000;text-align:center;font-size:28px;font-weight:bold;padding:18px}
-section{max-width:1200px;margin:auto;padding:75px 20px}
-h2{text-align:center;color:#d4af37;font-size:40px;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:#1c1c1c;padding:25px;border-radius:12px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.gallery img{width:100%;height:300px;object-fit:cover;border-radius:12px}
-.center{text-align:center}
-.cta{background:#d4af37;color:#000;padding:50px;border-radius:15px;text-align:center}
-.floating{position:fixed;bottom:20px;right:20px;background:#d4af37;color:#000;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:9999}
-footer{background:#000;padding:40px;text-align:center}
-@media(max-width:768px){.hero h1{font-size:42px}.hero p{font-size:20px}}
+:root{--g:#d4af37;--b:#0f0f0f;--c:#1b1b1b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:var(--b);color:#eee;line-height:1.7}
+header{min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),url('IMG_0105.jpeg') center/cover}
+.wrap{max-width:1200px;margin:auto;padding:20px}
+h1{font-size:4rem;color:var(--g)}
+h2{color:var(--g);text-align:center;margin-top:60px}
+.btn{display:inline-block;padding:16px 30px;background:var(--g);color:#000;text-decoration:none;border-radius:40px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card,.calc,.stats,.about,.seo,details{background:var(--c);padding:20px;border-radius:16px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.gallery img{width:100%;height:240px;object-fit:cover;border-radius:12px}
+.city{padding:15px;background:#222;border-radius:10px;text-align:center}
+input,select,button{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:none}
+button{background:var(--g);font-weight:bold}
+.phone{position:fixed;bottom:20px;right:20px;background:var(--g);padding:16px 20px;border-radius:999px;text-decoration:none;color:#000;font-weight:bold}
+footer{padding:40px;text-align:center;background:#000;margin-top:50px}
 </style>
+<script>
+function calc(){
+let s=parseFloat(document.getElementById('spot').value)||0;
+let g=parseFloat(document.getElementById('grams').value)||0;
+let k=parseFloat(document.getElementById('karat').value)||0;
+let melt=(g*k/24)*s/31.1035;
+document.getElementById('result').innerHTML="<h3>Estimated Melt: $"+melt.toFixed(2)+"</h3><p>Estimated Offer (92%): <b>$"+(melt*.92).toFixed(2)+"</b></p>";
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"SWFL Gold & Silver Buyers","telephone":"+12395609063","url":"https://swflgoldbuyers.github.io/"}</script>
 </head>
 <body>
-
-<a class="floating" href="tel:2395609063">📞 Call Now</a>
-
-<div class="hero">
-<div>
+<a class="phone" href="tel:2395609063">Call 239-560-9063</a>
+<header><div class="wrap">
 <h1>SWFL Gold & Silver Buyers</h1>
-<p>Buying Gold Jewelry, Silver, Coins, Bullion, Estate Jewelry & Scrap Precious Metals Throughout Southwest Florida.</p>
-<a class="btn" href="tel:2395609063">Call or Text 239-560-9063</a>
-</div>
-</div>
+<p>Professional local buyer of gold jewelry, silver, bullion, coins and estate jewelry serving Southwest Florida.</p>
+<p><a class="btn" href="tel:2395609063">Call Now</a></p>
+</div></header>
 
-<div class="phonebar">239-560-9063</div>
-
-<section>
-<h2>Why Sellers Choose Us</h2>
-<div class="grid">
-<div class="card"><h3>Transparent Testing</h3><p>Items are tested and weighed in front of you.</p></div>
-<div class="card"><h3>Safe Public Meetings</h3><p>Professional, secure meeting locations throughout SWFL.</p></div>
-<div class="card"><h3>No Obligation Offers</h3><p>Know what your items are worth before deciding to sell.</p></div>
-<div class="card"><h3>Fast Payment</h3><p>Immediate payment on accepted offers.</p></div>
-</div>
-</section>
-
-<section>
+<div class="wrap">
 <h2>What We Buy</h2>
-<div class="grid">
-<div class="card"><h3>Gold Jewelry</h3><p>10k, 14k, 18k, 22k, broken jewelry and scrap gold.</p></div>
-<div class="card"><h3>Silver</h3><p>Sterling silver, flatware, scrap silver and collectibles.</p></div>
-<div class="card"><h3>Coins & Bullion</h3><p>Gold coins, silver coins, bars and rounds.</p></div>
-<div class="card"><h3>Estate Jewelry</h3><p>Inherited collections and estate lots.</p></div>
+<div class="grid"><div class='card'><h3>Gold Jewelry</h3><p>10K, 14K, 18K, 22K and 24K jewelry.</p></div>
+<div class='card'><h3>Silver Jewelry</h3><p>Sterling silver and scrap silver.</p></div>
+<div class='card'><h3>Coins</h3><p>Gold and silver coins.</p></div>
+<div class='card'><h3>Bullion</h3><p>Bars and rounds.</p></div>
+<div class='card'><h3>Estate Jewelry</h3><p>Single pieces or collections.</p></div>
+<div class='card'><h3>Dental Gold</h3><p>Evaluated for precious metal content.</p></div>
+<div class='card'><h3>Broken Jewelry</h3><p>Chains, rings and bracelets.</p></div>
+<div class='card'><h3>Luxury Watches</h3><p>Select luxury watches.</p></div>
 </div>
-</section>
 
-<section>
+<h2>Gold Value Estimator</h2>
+<div class="calc">
+<input id="spot" value="3400">
+<select id="karat"><option value="10">10K</option><option value="14">14K</option><option value="18">18K</option><option value="22">22K</option><option value="24">24K</option></select>
+<input id="grams" placeholder="Weight in grams">
+<button onclick="calc()">Calculate</button>
+<div id="result"></div>
+</div>
+
 <h2>Recent Purchases</h2>
-<p class="center">Photos from actual purchases and inventory.</p><br>
-<div class="gallery">
-<img src="IMG_0105.jpeg"><img src="IMG_0106.jpeg"><img src="IMG_0107.jpeg"><img src="IMG_0108.jpeg">
-<img src="IMG_0109.jpeg"><img src="IMG_0141.jpeg"><img src="IMG_0143.jpeg"><img src="IMG_0429.jpeg">
-</div>
-</section>
+<div class="gallery"><img src='IMG_0105.jpeg' alt='Purchase'>
+<img src='IMG_0106.jpeg' alt='Purchase'>
+<img src='IMG_0107.jpeg' alt='Purchase'>
+<img src='IMG_0108.jpeg' alt='Purchase'>
+<img src='IMG_0109.jpeg' alt='Purchase'>
+<img src='IMG_0141.jpeg' alt='Purchase'>
+<img src='IMG_0143.jpeg' alt='Purchase'>
+<img src='IMG_0429.jpeg' alt='Purchase'></div>
 
-<section>
-<h2>How It Works</h2>
-<div class="grid">
-<div class="card"><h3>1. Contact Us</h3><p>Send photos or call us.</p></div>
-<div class="card"><h3>2. Meet Safely</h3><p>Convenient public meeting location.</p></div>
-<div class="card"><h3>3. Testing & Weighing</h3><p>Transparent evaluation process.</p></div>
-<div class="card"><h3>4. Get Paid</h3><p>Receive an offer and immediate payment.</p></div>
-</div>
-</section>
-
-<section>
-<h2>Why Southwest Florida Sellers Work With Us</h2>
-<div class="grid">
-<div class="card">✓ Local Southwest Florida Buyer</div>
-<div class="card">✓ Gold, Silver, Coins & Bullion</div>
-<div class="card">✓ Transparent Testing Process</div>
-<div class="card">✓ Fast, Fair Offers</div>
-</div>
-</section>
-
-<section>
 <h2>Areas Served</h2>
-<div class="card center" style="font-size:20px;">
-Fort Myers • Estero • Bonita Springs • Naples • Cape Coral • Lehigh Acres • North Fort Myers • Southwest Florida
-</div>
-</section>
+<div class="grid"><div class='city'>Fort Myers</div><div class='city'>Cape Coral</div><div class='city'>Estero</div><div class='city'>Bonita Springs</div><div class='city'>Naples</div><div class='city'>Lehigh Acres</div><div class='city'>North Fort Myers</div><div class='city'>San Carlos Park</div><div class='city'>Alva</div><div class='city'>Pine Island</div></div>
 
-<section>
+<h2>About Our Process</h2>
+<div class="about">
+<p>We focus on transparency, clear communication and fair offers based on current precious metal prices. Whether you have a single gold ring or an entire estate collection, we strive to make the selling process straightforward and professional.</p>
+<ol>
+<li>Contact us by phone or text.</li>
+<li>Arrange a safe public meeting.</li>
+<li>We test and weigh your items.</li>
+<li>Receive a no-obligation offer.</li>
+<li>Get paid immediately if you accept.</li>
+</ol>
+</div>
+
 <h2>Frequently Asked Questions</h2>
-<div class="grid">
-<div class="card"><h3>Do you buy broken jewelry?</h3><p>Yes.</p></div>
-<div class="card"><h3>Do you buy silver?</h3><p>Yes, including sterling silver and bullion.</p></div>
-<div class="card"><h3>Do you buy coins?</h3><p>Yes, gold and silver coins.</p></div>
-<div class="card"><h3>How is value determined?</h3><p>Testing, weight and current market value.</p></div>
-</div>
-</section>
+<details><summary>Do you buy broken jewelry?</summary><p>Yes. Value is based primarily on precious metal content.</p></details><details><summary>Do you test items in front of me?</summary><p>Yes, whenever practical we explain our testing process.</p></details><details><summary>Do I need an appointment?</summary><p>Appointments are recommended.</p></details><details><summary>How do you determine value?</summary><p>Weight, purity and current market prices.</p></details><details><summary>Do you buy coins?</summary><p>Yes, including bullion and many collectible coins.</p></details><details><summary>Where do you meet?</summary><p>Safe public meeting locations around Southwest Florida.</p></details><details><summary>How do I get a quote?</summary><p>Call or text us with photos if available.</p></details><details><summary>Is there any obligation?</summary><p>No. Quotes are free.</p></details>
 
-<section>
-<div class="cta">
-<h2 style="color:#000;">Ready To Sell Gold or Silver?</h2>
-<p>Call or Text Today For A Free Quote</p>
-<a class="btn" href="tel:2395609063">239-560-9063</a>
+<h2>Southwest Florida Gold Buying Guide</h2>
+<div class="seo">
+<h3>Sell Gold in Fort Myers</h3><p>If you are looking to sell gold, silver, coins or bullion in Fort Myers, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in Cape Coral</h3><p>If you are looking to sell gold, silver, coins or bullion in Cape Coral, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in Estero</h3><p>If you are looking to sell gold, silver, coins or bullion in Estero, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in Bonita Springs</h3><p>If you are looking to sell gold, silver, coins or bullion in Bonita Springs, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in Naples</h3><p>If you are looking to sell gold, silver, coins or bullion in Naples, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in Lehigh Acres</h3><p>If you are looking to sell gold, silver, coins or bullion in Lehigh Acres, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in North Fort Myers</h3><p>If you are looking to sell gold, silver, coins or bullion in North Fort Myers, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in San Carlos Park</h3><p>If you are looking to sell gold, silver, coins or bullion in San Carlos Park, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in Alva</h3><p>If you are looking to sell gold, silver, coins or bullion in Alva, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+<h3>Sell Gold in Pine Island</h3><p>If you are looking to sell gold, silver, coins or bullion in Pine Island, SWFL Gold & Silver Buyers offers transparent testing, competitive offers based on current precious metal prices, and convenient public meeting locations. We purchase gold jewelry, silver flatware, bullion bars, rounds, estate jewelry and more throughout the area.</p>
+
 </div>
-</section>
 
 <footer>
-<h3>SWFL Gold & Silver Buyers</h3>
-<p>Gold Jewelry • Silver • Coins • Bullion • Estate Jewelry</p>
-<p>Fort Myers • Estero • Bonita Springs • Naples • Cape Coral</p>
+<h2>Ready to Sell Gold or Silver?</h2>
+<p>Call or text <strong>239-560-9063</strong> today for a free quote.</p>
 </footer>
-
-</body>
-</html>
+</div>
+</body></html>
