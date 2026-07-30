@@ -3,1501 +3,1071 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWFL Gold & Silver Buyers | Sell Gold, Silver, Coins & Bullion</title>
 
-<title>SWFL Gold & Silver Buyers | Sell Gold, Silver, Coins & Bullion in Southwest Florida</title>
+    <meta name="description"
+        content="Sell gold, silver, jewelry, coins, bullion, estate jewelry and luxury watches in Southwest Florida. Fair market offers, transparent testing and immediate payment.">
 
-<meta name="description" content="Professional precious metal buyer serving Fort Myers, Cape Coral, Estero, Bonita Springs, Naples and all of Southwest Florida. We buy gold jewelry, silver, coins, bullion and estate jewelry.">
+    <meta name="keywords"
+        content="sell gold fort myers, gold buyer estero, silver buyer, bullion buyer, coin buyer southwest florida">
 
-<meta name="keywords" content="gold buyer fort myers,sell gold fort myers,sell silver fort myers,gold buyer cape coral,gold buyer estero,gold buyer naples,bullion buyer">
+    <meta name="author" content="SWFL Gold & Silver Buyers">
 
-<meta name="author" content="SWFL Gold & Silver Buyers">
+    <meta name="theme-color" content="#0b0b0b">
 
-<meta name="theme-color" content="#090909">
+    <link rel="canonical" href="https://swflgoldbuyers.github.io/">
 
-<meta property="og:title" content="SWFL Gold & Silver Buyers">
+    <meta property="og:title" content="SWFL Gold & Silver Buyers">
+    <meta property="og:description"
+        content="Professional precious metals buyer serving Southwest Florida.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swflgoldbuyers.github.io/">
 
-<meta property="og:description" content="Transparent Testing • Fair Offers • Immediate Payment">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-<meta property="og:url" content="https://swflgoldbuyers.github.io/">
-
-<meta property="og:image" content="IMG_0143.jpeg">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-
---gold:#D4AF37;
-
---gold2:#F3CF60;
-
---background:#090909;
-
---background2:#141414;
-
---card:#1A1A1A;
-
---text:#FFFFFF;
-
---gray:#C9C9C9;
-
---border:rgba(255,255,255,.08);
-
-}
-
-*{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
-scroll-behavior:smooth;
-
-}
-
-body{
-
-font-family:'Inter',sans-serif;
-
-background:var(--background);
-
-color:white;
-
-line-height:1.7;
-
-overflow-x:hidden;
-
-}
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-left:-20%;
-
-top:-20%;
-
-width:900px;
-
-height:900px;
-
-background:radial-gradient(circle,rgba(212,175,55,.18),transparent 70%);
-
-filter:blur(90px);
-
-pointer-events:none;
-
-animation:glow 12s ease-in-out infinite;
-
-z-index:-1;
-
-}
-
-@keyframes glow{
-
-0%{transform:translate(0,0);}
-
-50%{transform:translate(120px,70px);}
-
-100%{transform:translate(0,0);}
-
-}
-
-a{
-
-text-decoration:none;
-
-color:inherit;
-
-}
-
-img{
-
-display:block;
-
-max-width:100%;
-
-}
-
-section{
-
-padding:110px 8%;
-
-}
-
-.container{
-
-max-width:1300px;
-
-margin:auto;
-
-}
-
-nav{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-padding:22px 8%;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-background:rgba(10,10,10,.55);
-
-backdrop-filter:blur(20px);
-
-border-bottom:1px solid rgba(255,255,255,.05);
-
-z-index:9999;
-
-}
-
-.logo{
-
-font-size:28px;
-
-font-weight:800;
-
-letter-spacing:.5px;
-
-}
-
-.logo span{
-
-color:var(--gold);
-
-}
-
-nav ul{
-
-display:flex;
-
-gap:40px;
-
-list-style:none;
-
-}
-
-nav ul li{
-
-font-weight:500;
-
-transition:.3s;
-
-}
-
-nav ul li:hover{
-
-color:var(--gold);
-
-}
-
-.callButton{
-
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-
-color:#000;
-
-padding:15px 28px;
-
-border-radius:999px;
-
-font-weight:700;
-
-transition:.35s;
-
-box-shadow:0 15px 35px rgba(212,175,55,.20);
-
-}
-
-.callButton:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 20px 45px rgba(212,175,55,.35);
-
-}
-
-.hero{
-
-min-height:100vh;
-
-display:grid;
-
-grid-template-columns:1.1fr .9fr;
-
-gap:70px;
-
-align-items:center;
-
-padding:150px 8% 80px;
-
-}
-
-.hero h1{
-
-font-size:82px;
-
-line-height:1.02;
-
-font-weight:800;
-
-margin-bottom:30px;
-
-}
-
-.hero h1 span{
-
-color:var(--gold);
-
-}
-
-.hero p{
-
-font-size:22px;
-
-color:var(--gray);
-
-max-width:720px;
-
-margin-bottom:40px;
-
-}
-
-.buttonRow{
-
-display:flex;
-
-gap:18px;
-
-flex-wrap:wrap;
-
-margin-bottom:45px;
-
-}
-
-.primary{
-
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-
-color:#000;
-
-padding:18px 34px;
-
-border-radius:999px;
-
-font-weight:700;
-
-transition:.35s;
-
-}
-
-.primary:hover{
-
-transform:translateY(-4px);
-
-}
-
-.secondary{
-
-padding:18px 34px;
-
-border-radius:999px;
-
-border:1px solid rgba(255,255,255,.14);
-
-transition:.35s;
-
-}
-
-.secondary:hover{
-
-border-color:var(--gold);
-
-background:rgba(255,255,255,.03);
-
-}
-
-.badges{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:15px;
-
-}
-
-.badge{
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-padding:12px 18px;
-
-border-radius:999px;
-
-font-size:15px;
-
-}
-
-.heroImage{
-
-position:relative;
-
-}
-
-.heroImage img{
-
-border-radius:28px;
-
-box-shadow:
-
-0 40px 100px rgba(0,0,0,.5),
-
-0 0 60px rgba(212,175,55,.15);
-
-}
-
-.scroll{
-
-position:absolute;
-
-bottom:30px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-font-size:14px;
-
-letter-spacing:4px;
-
-color:#999;
-
-animation:bounce 2s infinite;
-
-}
-
-@keyframes bounce{
-
-50%{
-
-transform:translate(-50%,10px);
-
-}
-
-}
-
-@media(max-width:1000px){
-
-.hero{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-.hero h1{
-
-font-size:52px;
-
-}
-
-.hero p{
-
-margin:auto auto 35px;
-
-font-size:19px;
-
-}
-
-.buttonRow{
-
-justify-content:center;
-
-}
-
-.badges{
-
-justify-content:center;
-
-}
-
-nav ul{
-
-display:none;
-
-}
-
-}
-
-</style>
-
-<script type="application/ld+json">
-
-{
-
-"@context":"https://schema.org",
-
-"@type":"LocalBusiness",
-
-"name":"SWFL Gold & Silver Buyers",
-
-"url":"https://swflgoldbuyers.github.io/",
-
-"telephone":"+12395609063",
-
-"areaServed":"Southwest Florida"
-
-}
-
-</script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
+<header class="header">
 
-<nav>
+    <div class="container">
 
-<div class="logo">
+        <a href="#" class="logo">
 
-SWFL <span>Gold &amp; Silver Buyers</span>
+            <span>SWFL</span> Gold & Silver Buyers
 
-</div>
+        </a>
 
-<ul>
+        <nav class="nav">
 
-<li><a href="#buy">What We Buy</a></li>
+            <a href="#home">Home</a>
 
-<li><a href="#process">Our Process</a></li>
+            <a href="#calculator">Calculator</a>
 
-<li><a href="#calculator">Calculator</a></li>
+            <a href="#what-we-buy">What We Buy</a>
 
-<li><a href="#gallery">Gallery</a></li>
+            <a href="#process">Process</a>
 
-<li><a href="#faq">FAQ</a></li>
+            <a href="#faq">FAQ</a>
 
-</ul>
+        </nav>
 
-<a class="callButton" href="tel:2395609063">
+        <a href="tel:2398264882" class="call-button">
 
-Call Now
+            Call Now
 
-</a>
+        </a>
 
-</nav>
+        <button class="mobile-menu">
 
-<header class="hero">
+            ☰
 
-<div>
+        </button>
 
-<h1>
-
-Southwest Florida's
-
-<span>Trusted</span>
-
-Gold & Silver Buyer
-
-</h1>
-
-<p>
-
-Professional precious metal purchasing throughout Southwest Florida with transparent testing, fair offers based on current market prices, and immediate payment.
-
-</p>
-
-<div class="buttonRow">
-
-<a class="primary" href="tel:2395609063">
-
-📞 Call 239-560-9063
-
-</a>
-
-<a class="secondary" href="sms:2395609063">
-
-💬 Text Photos
-
-</a>
-
-</div>
-
-<div class="badges">
-
-<div class="badge">✓ Transparent Testing</div>
-
-<div class="badge">✓ Fair Offers</div>
-
-<div class="badge">✓ Immediate Payment</div>
-
-<div class="badge">✓ Local SWFL Business</div>
-
-</div>
-
-</div>
-
-<div class="heroImage">
-
-<img src="IMG_0143.jpeg" alt="Gold Purchase">
-
-</div>
-
-<div class="scroll">
-
-SCROLL ↓
-
-</div>
+    </div>
 
 </header>
-<section id="buy">
+<main>
 
-<div class="container">
+<section class="hero" id="home">
 
-<h2 style="font-size:54px;text-align:center;margin-bottom:20px;font-weight:800;">
-Why <span style="color:var(--gold);">Choose Us</span>
-</h2>
+    <div class="container hero-grid">
 
-<p style="max-width:850px;margin:auto;text-align:center;color:var(--gray);font-size:20px;margin-bottom:70px;">
+        <div class="hero-left">
 
-Selling precious metals shouldn't feel like walking into a pawn shop.
-We focus on transparency, professionalism, and fair market-based pricing from start to finish.
+            <span class="hero-tag">
 
-</p>
+                SOUTHWEST FLORIDA'S TRUSTED PRECIOUS METALS BUYER
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;">
+            </span>
 
-<div class="card">
+            <h1>
 
-<div style="font-size:42px;margin-bottom:18px;">🧪</div>
+                Sell Your
 
-<h3 style="font-size:28px;margin-bottom:14px;color:var(--gold);">
-Professional Testing
-</h3>
+                <span>Gold & Silver</span>
 
-<p style="color:var(--gray);">
+                With Confidence
 
-Every item is carefully examined using professional testing methods to verify authenticity and purity before any offer is made.
+            </h1>
 
-</p>
+            <p>
 
-</div>
+                We purchase gold jewelry, silver, bullion, coins,
+                estate jewelry and luxury watches using transparent
+                testing and fair market pricing.
 
-<div class="card">
+            </p>
 
-<div style="font-size:42px;margin-bottom:18px;">📈</div>
+            <div class="hero-buttons">
 
-<h3 style="font-size:28px;margin-bottom:14px;color:var(--gold);">
+                <a href="tel:2398264882" class="btn btn-gold">
 
-Current Market Pricing
+                    Call 239-826-4882
 
-</h3>
+                </a>
 
-<p style="color:var(--gray);">
+                <a href="sms:2398264882" class="btn btn-dark">
 
-Offers are based on live precious metal values—not arbitrary numbers—so you understand exactly how your offer is calculated.
+                    Text Photos
 
-</p>
+                </a>
 
-</div>
+            </div>
 
-<div class="card">
+            <div class="hero-features">
 
-<div style="font-size:42px;margin-bottom:18px;">🤝</div>
+                <div>✓ Same-Day Payment</div>
 
-<h3 style="font-size:28px;margin-bottom:14px;color:var(--gold);">
+                <div>✓ Transparent Testing</div>
 
-No Pressure
+                <div>✓ Fair Market Offers</div>
 
-</h3>
+                <div>✓ Local SWFL Business</div>
 
-<p style="color:var(--gray);">
+            </div>
 
-There is absolutely no obligation to sell.
-You're welcome to compare offers before making your decision.
+        </div>
+                <div class="hero-right">
 
-</p>
+            <div class="hero-image-card">
 
-</div>
+                <img src="hero.jpg"
+                     alt="Gold jewelry, coins and bullion">
 
-<div class="card">
+            </div>
 
-<div style="font-size:42px;margin-bottom:18px;">⚡</div>
+        </div>
 
-<h3 style="font-size:28px;margin-bottom:14px;color:var(--gold);">
+    </div>
 
-Immediate Payment
+</section>
+<!-- =========================
+     HERO STATS
+========================== -->
 
-</h3>
+<section class="hero-stats">
 
-<p style="color:var(--gray);">
+    <div class="container">
 
-Once you accept an offer, payment is made immediately.
-No waiting. No shipping. No hidden fees.
+        <div class="stats-grid">
 
-</p>
+            <div class="stat-card">
 
-</div>
+                <h3>FREE</h3>
 
-</div>
+                <p>Evaluations</p>
 
-</div>
+            </div>
+
+            <div class="stat-card">
+
+                <h3>SAME DAY</h3>
+
+                <p>Payment</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>LOCAL</h3>
+
+                <p>Southwest Florida</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>FAIR</h3>
+
+                <p>Market Offers</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     LIVE GOLD PRICE
+========================== -->
+
+<section class="spot-price">
+
+    <div class="container">
+
+        <span class="section-label">
+
+            LIVE MARKET
+
+        </span>
+
+        <h2>
+
+            Today's Gold Spot Price
+
+        </h2>
+
+        <div class="spot-price-box">
+
+            <div class="spot-value" id="goldSpot">
+
+                Loading...
+
+            </div>
+
+            <p>
+
+                Updated automatically throughout the day.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     CALCULATOR
+========================== -->
+
+<section class="calculator" id="calculator">
+
+    <div class="container">
+
+        <span class="section-label">
+
+            ESTIMATE YOUR OFFER
+
+        </span>
+
+        <h2>
+
+            Gold & Silver Calculator
+
+        </h2>
+
+        <p class="section-description">
+
+            Get an instant estimate based on today's precious metals market.
+
+        </p>
+
+        <div class="calculator-card">
+
+            <div class="calculator-row">
+
+                <div class="form-group">
+
+                    <label>Metal</label>
+
+                    <select id="metal">
+
+                        <option value="gold">Gold</option>
+
+                        <option value="silver">Silver</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Purity</label>
+
+                    <select id="purity">
+
+                        <option value="10">10K</option>
+                        <option value="14">14K</option>
+                        <option value="18">18K</option>
+                        <option value="22">22K</option>
+                        <option value="24">24K</option>
+                        <option value="925">Sterling (.925)</option>
+                        <option value="999">Fine (.999)</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Weight (grams)</label>
+
+                    <input
+                        type="number"
+                        id="weight"
+                        placeholder="0.00"
+                        step="0.01">
+
+                </div>
+
+            </div>
+
+            <button
+                id="calculateOffer"
+                class="btn btn-gold calculator-button">
+
+                Calculate Offer
+
+            </button>
+
+            <div class="offer-box">
+
+                <span>
+
+                    Estimated Cash Offer
+
+                </span>
+
+                <h3 id="offerResult">
+
+                    $0.00
+
+                </h3>
+
+                <p>
+
+                    Final offers are determined after professional testing.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     WHAT WE BUY
+========================== -->
+
+<section class="what-we-buy" id="what-we-buy">
+
+    <div class="container">
+
+        <span class="section-label">
+
+            WHAT WE BUY
+
+        </span>
+
+        <h2>
+
+            Precious Metals & Valuables
+
+        </h2>
+
+        <p class="section-description">
+
+            We purchase a wide range of precious metals and collectible items.
+
+        </p>
+
+        <div class="buy-grid">
+
+            <article class="buy-card">
+
+                <h3>Gold Jewelry</h3>
+
+                <p>
+                    Rings, necklaces, bracelets, earrings, broken jewelry and scrap gold.
+                </p>
+
+            </article>
+
+            <article class="buy-card">
+
+                <h3>Silver Jewelry</h3>
+
+                <p>
+                    Sterling silver jewelry, flatware and decorative pieces.
+                </p>
+
+            </article>
+
+            <article class="buy-card">
+
+                <h3>Coins</h3>
+
+                <p>
+                    Gold coins, silver coins, Morgan Dollars, Eagles and collections.
+                </p>
+
+            </article>
+
+            <article class="buy-card">
+
+                <h3>Bullion</h3>
+
+                <p>
+                    Gold bars, silver bars, rounds and investment bullion.
+                </p>
+
+            </article>
+
+            <article class="buy-card">
+
+                <h3>Luxury Watches</h3>
+
+                <p>
+                    Rolex, Omega, Cartier and other luxury watch brands.
+                </p>
+
+            </article>
+
+            <article class="buy-card">
+
+                <h3>Estate Jewelry</h3>
+
+                <p>
+                    Vintage, antique and inherited jewelry collections.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     WHY CHOOSE US
+========================================== -->
+
+<section class="why-us" id="why-us">
+
+    <div class="container">
+
+        <span class="section-label">
+
+            WHY CHOOSE US
+
+        </span>
+
+        <h2>
+
+            A Better Way to Sell Your Precious Metals
+
+        </h2>
+
+        <p class="section-description">
+
+            We believe selling your valuables should be straightforward,
+            transparent and pressure-free.
+
+        </p>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <div class="why-number">
+
+                    01
+
+                </div>
+
+                <h3>
+
+                    Transparent Testing
+
+                </h3>
+
+                <p>
+
+                    Every item is professionally evaluated using industry
+                    accepted testing methods so you understand exactly what
+                    you're selling.
+
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <div class="why-number">
+
+                    02
+
+                </div>
+
+                <h3>
+
+                    Fair Market Offers
+
+                </h3>
+
+                <p>
+
+                    Offers are based on current precious metals market pricing,
+                    helping ensure competitive value for your items.
+
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <div class="why-number">
+
+                    03
+
+                </div>
+
+                <h3>
+
+                    Immediate Payment
+
+                </h3>
+
+                <p>
+
+                    Accept the offer and receive payment immediately.
+                    No waiting and no unnecessary delays.
+
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <div class="why-number">
+
+                    04
+
+                </div>
+
+                <h3>
+
+                    Local Southwest Florida Business
+
+                </h3>
+
+                <p>
+
+                    Proudly serving Fort Myers, Estero, Cape Coral,
+                    Bonita Springs, Naples and surrounding communities.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<section>
 
-<div class="container">
 
-<h2 style="font-size:54px;text-align:center;margin-bottom:20px;font-weight:800;">
 
-What We <span style="color:var(--gold);">Buy</span>
 
-</h2>
+<!-- ==========================================
+     PROCESS
+========================================== -->
 
-<p style="text-align:center;color:var(--gray);max-width:850px;margin:auto auto 70px;font-size:20px;">
+<section class="process" id="process">
 
-Whether you're selling one item or an entire estate collection, we're interested in a wide variety of precious metals and valuables.
+    <div class="container">
 
-</p>
+        <span class="section-label">
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;">
+            HOW IT WORKS
 
-<div class="card">
+        </span>
 
-<h3 style="color:var(--gold);margin-bottom:16px;">
-Gold Jewelry
-</h3>
+        <h2>
 
-<p>
+            Selling Your Gold Is Simple
 
-10K • 14K • 18K • 22K • 24K
+        </h2>
 
-<br><br>
+        <div class="process-grid">
 
-Rings, chains, bracelets, earrings, pendants, broken jewelry, scrap gold and more.
+            <div class="step">
 
-</p>
+                <div class="step-number">
 
-</div>
+                    1
 
-<div class="card">
+                </div>
 
-<h3 style="color:var(--gold);margin-bottom:16px;">
-Silver
-</h3>
+                <h3>
 
-<p>
+                    Contact Us
 
-Sterling jewelry
+                </h3>
 
-<br><br>
+                <p>
 
-Silver flatware
+                    Call or text us with details about the items you'd like to sell.
 
-<br><br>
+                </p>
 
-Tea sets
+            </div>
 
-<br><br>
+            <div class="step">
 
-Scrap silver
+                <div class="step-number">
 
-<br><br>
+                    2
 
-Sterling collectibles
+                </div>
 
-</p>
+                <h3>
 
-</div>
+                    Professional Evaluation
 
-<div class="card">
+                </h3>
 
-<h3 style="color:var(--gold);margin-bottom:16px;">
-Gold & Silver Coins
-</h3>
+                <p>
 
-<p>
+                    We carefully inspect and test your items using professional equipment.
 
-American Eagles
+                </p>
 
-<br><br>
+            </div>
 
-Krugerrands
+            <div class="step">
 
-<br><br>
+                <div class="step-number">
 
-Maple Leafs
+                    3
 
-<br><br>
+                </div>
 
-Morgan Dollars
+                <h3>
 
-<br><br>
+                    Receive Your Offer
 
-Numismatic collections
+                </h3>
 
-</p>
+                <p>
 
-</div>
+                    You'll receive a clear, no-obligation offer based on current market prices.
 
-<div class="card">
+                </p>
 
-<h3 style="color:var(--gold);margin-bottom:16px;">
-Bullion
-</h3>
+            </div>
 
-<p>
+            <div class="step">
 
-Gold bars
+                <div class="step-number">
 
-<br><br>
+                    4
 
-Silver bars
+                </div>
 
-<br><br>
+                <h3>
 
-Rounds
+                    Get Paid
 
-<br><br>
+                </h3>
 
-Government bullion
+                <p>
 
-<br><br>
+                    Accept the offer and receive immediate payment.
 
-Private mint products
+                </p>
 
-</p>
+            </div>
 
-</div>
+        </div>
 
-<div class="card">
-
-<h3 style="color:var(--gold);margin-bottom:16px;">
-Estate Jewelry
-</h3>
-
-<p>
-
-Inherited collections
-
-<br><br>
-
-Vintage jewelry
-
-<br><br>
-
-Antique pieces
-
-<br><br>
-
-Large family estates
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3 style="color:var(--gold);margin-bottom:16px;">
-Luxury Watches
-</h3>
-
-<p>
-
-Select luxury brands
-
-<br><br>
-
-Working or non-working
-
-<br><br>
-
-Complete collections
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<section id="process">
-
-<div class="container">
-
-<h2 style="font-size:54px;text-align:center;font-weight:800;margin-bottom:20px;">
-How We Determine <span style="color:var(--gold);">Your Offer</span>
-</h2>
-
-<p style="max-width:850px;margin:auto;text-align:center;color:var(--gray);font-size:20px;margin-bottom:80px;">
-
-We believe every customer deserves to understand exactly how their offer is calculated.
-
-</p>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;">
-
-<div class="card" style="text-align:center;">
-
-<div style="
-width:70px;
-height:70px;
-border-radius:50%;
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-display:flex;
-align-items:center;
-justify-content:center;
-margin:auto;
-font-size:28px;
-font-weight:800;
-color:#000;
-margin-bottom:25px;">
-1
-</div>
-
-<h3 style="margin-bottom:15px;color:var(--gold);">
-Inspect
-</h3>
-
-<p style="color:var(--gray);">
-We examine each item for hallmarks, construction, wear and authenticity.
-</p>
-
-</div>
-
-<div class="card" style="text-align:center;">
-
-<div style="
-width:70px;
-height:70px;
-border-radius:50%;
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-display:flex;
-align-items:center;
-justify-content:center;
-margin:auto;
-font-size:28px;
-font-weight:800;
-color:#000;
-margin-bottom:25px;">
-2
-</div>
-
-<h3 style="margin-bottom:15px;color:var(--gold);">
-Test
-</h3>
-
-<p style="color:var(--gray);">
-Professional testing verifies the purity of every precious metal item.
-</p>
-
-</div>
-
-<div class="card" style="text-align:center;">
-
-<div style="
-width:70px;
-height:70px;
-border-radius:50%;
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-display:flex;
-align-items:center;
-justify-content:center;
-margin:auto;
-font-size:28px;
-font-weight:800;
-color:#000;
-margin-bottom:25px;">
-3
-</div>
-
-<h3 style="margin-bottom:15px;color:var(--gold);">
-Weigh
-</h3>
-
-<p style="color:var(--gray);">
-Items are weighed on calibrated digital scales for accurate gram weights.
-</p>
-
-</div>
-
-<div class="card" style="text-align:center;">
-
-<div style="
-width:70px;
-height:70px;
-border-radius:50%;
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-display:flex;
-align-items:center;
-justify-content:center;
-margin:auto;
-font-size:28px;
-font-weight:800;
-color:#000;
-margin-bottom:25px;">
-4
-</div>
-
-<h3 style="margin-bottom:15px;color:var(--gold);">
-Market Value
-</h3>
-
-<p style="color:var(--gray);">
-Current precious metal prices are used to determine a competitive offer.
-</p>
-
-</div>
-
-<div class="card" style="text-align:center;">
-
-<div style="
-width:70px;
-height:70px;
-border-radius:50%;
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-display:flex;
-align-items:center;
-justify-content:center;
-margin:auto;
-font-size:28px;
-font-weight:800;
-color:#000;
-margin-bottom:25px;">
-5
-</div>
-
-<h3 style="margin-bottom:15px;color:var(--gold);">
-Immediate Payment
-</h3>
-
-<p style="color:var(--gray);">
-Accept the offer and receive payment immediately. No waiting and no hidden fees.
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<section>
 
-<div class="container">
 
-<div style="
-background:linear-gradient(145deg,#111,#1d1d1d);
-border:1px solid rgba(255,255,255,.08);
-border-radius:28px;
-padding:70px;
-">
 
-<h2 style="font-size:50px;text-align:center;font-weight:800;margin-bottom:20px;">
-Why People Trust <span style="color:var(--gold);">SWFL Gold & Silver Buyers</span>
-</h2>
 
-<p style="text-align:center;color:var(--gray);font-size:20px;max-width:850px;margin:0 auto 60px;">
-Our goal is simple: provide the most professional precious metals buying experience in Southwest Florida.
-</p>
+<!-- ==========================================
+     SERVICE AREAS
+========================================== -->
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:35px;
-text-align:center;
-">
+<section class="service-areas">
 
-<div>
+    <div class="container">
 
-<div style="font-size:56px;font-weight:800;color:var(--gold);">
-100%
-</div>
+        <span class="section-label">
 
-<p style="color:var(--gray);margin-top:12px;">
-Free Evaluations
-</p>
+            SERVICE AREAS
 
-</div>
+        </span>
 
-<div>
+        <h2>
 
-<div style="font-size:56px;font-weight:800;color:var(--gold);">
-0
-</div>
+            Proudly Serving Southwest Florida
 
-<p style="color:var(--gray);margin-top:12px;">
-Pressure Sales
-</p>
+        </h2>
 
-</div>
+        <p class="section-description">
 
-<div>
+            We work with customers throughout Southwest Florida.
 
-<div style="font-size:56px;font-weight:800;color:var(--gold);">
-Same
-</div>
+        </p>
 
-<p style="color:var(--gray);margin-top:12px;">
-Day Payment
-</p>
+        <div class="areas-grid">
 
-</div>
+            <span>Fort Myers</span>
 
-<div>
+            <span>Cape Coral</span>
 
-<div style="font-size:56px;font-weight:800;color:var(--gold);">
-Local
-</div>
+            <span>Estero</span>
 
-<p style="color:var(--gray);margin-top:12px;">
-Southwest Florida Business
-</p>
+            <span>Bonita Springs</span>
 
-</div>
+            <span>Naples</span>
 
-</div>
+            <span>Lehigh Acres</span>
 
-</div>
+            <span>North Fort Myers</span>
 
-</div>
+            <span>San Carlos Park</span>
+
+        </div>
+
+    </div>
 
 </section>
 
-<section id="calculator">
 
-<div class="container">
 
-<h2 style="font-size:54px;text-align:center;font-weight:800;margin-bottom:20px;">
-Gold Value <span style="color:var(--gold);">Calculator</span>
-</h2>
 
-<p style="text-align:center;color:var(--gray);max-width:800px;margin:0 auto 60px;">
-Estimate the melt value of your gold based on purity and weight. Final offers depend on testing and current market prices.
-</p>
 
-<div class="card" style="max-width:800px;margin:auto;">
+<!-- ==========================================
+     CALL TO ACTION
+========================================== -->
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;">
+<section class="cta">
 
-<div>
+    <div class="container">
 
-<label>Gold Purity</label>
+        <div class="cta-box">
 
-<select id="karat" style="width:100%;padding:16px;margin-top:8px;background:#111;color:#fff;border:1px solid #333;border-radius:12px;">
+            <span>
 
-<option value="0.417">10K</option>
-<option value="0.585">14K</option>
-<option value="0.75">18K</option>
-<option value="0.916">22K</option>
-<option value="0.999">24K</option>
+                READY TO SELL?
 
-</select>
+            </span>
 
-</div>
+            <h2>
 
-<div>
+                Get Your Free Evaluation Today
 
-<label>Weight (grams)</label>
+            </h2>
 
-<input id="grams" type="number" placeholder="25"
+            <p>
 
-style="
-width:100%;
-padding:16px;
-margin-top:8px;
-background:#111;
-color:#fff;
-border:1px solid #333;
-border-radius:12px;
-">
+                Call or text us to receive a fair market offer for your gold,
+                silver, coins, bullion or jewelry.
 
-</div>
+            </p>
 
-</div>
+            <div class="hero-buttons">
 
-<button onclick="calculateGold()"
+                <a href="tel:2398264882" class="btn btn-gold">
 
-style="
-margin-top:30px;
-width:100%;
-padding:18px;
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-border:none;
-border-radius:14px;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-">
+                    Call 239-826-4882
 
-Estimate Value
+                </a>
 
-</button>
+                <a href="sms:2398264882" class="btn btn-dark">
 
-<h3 id="goldResult"
+                    Text Photos
 
-style="
-margin-top:35px;
-text-align:center;
-font-size:34px;
-color:var(--gold);
-">
+                </a>
 
-—
+            </div>
 
-</h3>
+        </div>
 
-</div>
+    </div>
 
-</div>
+</section>
+<!-- ==========================================
+     GALLERY
+========================================== -->
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <span class="section-label">
+
+            GALLERY
+
+        </span>
+
+        <h2>
+
+            Items We Commonly Purchase
+
+        </h2>
+
+        <p class="section-description">
+
+            From everyday jewelry to investment-grade bullion, we purchase a wide variety of precious metals.
+
+        </p>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="gold-jewelry.jpg" alt="Gold Jewelry">
+            </div>
+
+            <div class="gallery-item">
+                <img src="silver-bars.jpg" alt="Silver Bars">
+            </div>
+
+            <div class="gallery-item">
+                <img src="gold-coins.jpg" alt="Gold Coins">
+            </div>
+
+            <div class="gallery-item">
+                <img src="bullion.jpg" alt="Bullion">
+            </div>
+
+            <div class="gallery-item">
+                <img src="watches.jpg" alt="Luxury Watches">
+            </div>
+
+            <div class="gallery-item">
+                <img src="estate-jewelry.jpg" alt="Estate Jewelry">
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<script>
 
-const GOLD_PRICE_PER_GRAM = 107;
 
-function calculateGold(){
 
-const purity=parseFloat(document.getElementById("karat").value);
 
-const grams=parseFloat(document.getElementById("grams").value);
+<!-- ==========================================
+     FAQ
+========================================== -->
 
-if(isNaN(grams)||grams<=0){
+<section class="faq" id="faq">
 
-document.getElementById("goldResult").innerHTML="Enter a valid weight.";
+    <div class="container">
 
-return;
+        <span class="section-label">
 
-}
+            FREQUENTLY ASKED QUESTIONS
 
-const melt=(grams*purity*GOLD_PRICE_PER_GRAM);
+        </span>
 
-document.getElementById("goldResult").innerHTML=
+        <h2>
 
-"$"+melt.toFixed(2)+" Estimated Melt Value";
+            Common Questions
 
-}
+        </h2>
 
-</script>
-<section id="gallery">
+        <div class="faq-container">
 
-<div class="container">
+            <div class="faq-item">
 
-<h2 style="font-size:54px;text-align:center;font-weight:800;margin-bottom:20px;">
-Recent <span style="color:var(--gold);">Purchases</span>
-</h2>
+                <button class="faq-question">
 
-<p style="text-align:center;color:var(--gray);max-width:850px;margin:0 auto 60px;font-size:20px;">
+                    How do you determine my offer?
 
-Examples of items we've purchased throughout Southwest Florida.
+                </button>
 
-</p>
+                <div class="faq-answer">
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-">
+                    <p>
 
-<img src="IMG_0105.jpeg" style="width:100%;border-radius:20px;transition:.35s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        We evaluate purity, weight and current precious metals market prices before making an offer.
 
-<img src="IMG_0106.jpeg" style="width:100%;border-radius:20px;transition:.35s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                    </p>
 
-<img src="IMG_0107.jpeg" style="width:100%;border-radius:20px;transition:.35s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
 
-<img src="IMG_0108.jpeg" style="width:100%;border-radius:20px;transition:.35s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
 
-<img src="IMG_0109.jpeg" style="width:100%;border-radius:20px;transition:.35s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <div class="faq-item">
 
-<img src="IMG_0141.jpeg" style="width:100%;border-radius:20px;transition:.35s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <button class="faq-question">
 
-<img src="IMG_0143.jpeg" style="width:100%;border-radius:20px;transition:.35s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                    Is there any obligation to sell?
 
-<img src="IMG_0429.jpeg" style="width:100%;border-radius:20px;transition:.35s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                </button>
 
-</div>
+                <div class="faq-answer">
 
-</div>
+                    <p>
 
-</section>
+                        No. Every evaluation is completely free and there is never any obligation to accept an offer.
 
-<section>
+                    </p>
 
-<div class="container">
+                </div>
 
-<div style="
-background:linear-gradient(145deg,#111,#1b1b1b);
-border-radius:28px;
-padding:70px;
-border:1px solid rgba(255,255,255,.08);
-">
+            </div>
 
-<h2 style="font-size:50px;text-align:center;margin-bottom:25px;">
+            <div class="faq-item">
 
-Serving All of
+                <button class="faq-question">
 
-<span style="color:var(--gold);">
+                    What types of items do you buy?
 
-Southwest Florida
+                </button>
 
-</span>
+                <div class="faq-answer">
 
-</h2>
+                    <p>
 
-<p style="text-align:center;color:var(--gray);font-size:20px;max-width:850px;margin:0 auto 50px;">
+                        We purchase gold jewelry, silver, bullion, coins, estate jewelry and luxury watches.
 
-We proudly purchase gold, silver, coins and bullion throughout Lee and Collier Counties.
+                    </p>
 
-</p>
+                </div>
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-">
+            </div>
 
-<div class="card">Fort Myers</div>
+            <div class="faq-item">
 
-<div class="card">Cape Coral</div>
+                <button class="faq-question">
 
-<div class="card">Estero</div>
+                    How will I be paid?
 
-<div class="card">Bonita Springs</div>
+                </button>
 
-<div class="card">Naples</div>
+                <div class="faq-answer">
 
-<div class="card">Lehigh Acres</div>
+                    <p>
 
-<div class="card">North Fort Myers</div>
+                        Once an offer is accepted, payment is made immediately.
 
-<div class="card">Sanibel</div>
+                    </p>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
 
-<section>
 
-<div class="container">
 
-<div style="
-background:linear-gradient(135deg,#caa32f,#f0d36d);
-color:#000;
-padding:80px;
-border-radius:30px;
-text-align:center;
-">
 
-<h2 style="font-size:52px;font-weight:800;margin-bottom:25px;">
 
-Ready To Sell?
+<!-- ==========================================
+     FOOTER
+========================================== -->
 
-</h2>
+<footer class="footer">
 
-<p style="font-size:22px;max-width:750px;margin:auto auto 40px;">
+    <div class="container">
 
-Whether you have one gold ring or an entire estate collection, we'd be happy to provide a free evaluation.
+        <div class="footer-top">
 
-</p>
+            <div>
 
-<a href="tel:2395609063"
+                <h3>
 
-style="
-display:inline-block;
-padding:20px 42px;
-background:#000;
-color:#fff;
-border-radius:999px;
-font-size:20px;
-font-weight:700;
-">
+                    SWFL Gold & Silver Buyers
 
-📞 Call 239-560-9063
+                </h3>
 
-</a>
+                <p>
 
-</div>
+                    Fair offers. Transparent testing. Immediate payment.
 
-</div>
+                </p>
 
-</section>
+            </div>
 
-<section id="faq">
+            <div>
 
-<div class="container">
+                <h4>
 
-<h2 style="font-size:54px;text-align:center;margin-bottom:55px;">
+                    Contact
 
-Frequently Asked
+                </h4>
 
-<span style="color:var(--gold);">
+                <p>
 
-Questions
+                    <a href="tel:2398264882">
 
-</span>
+                        (239) 826-4882
 
-</h2>
+                    </a>
 
-<div style="display:grid;gap:20px;">
+                </p>
 
-<div class="card">
+                <p>
 
-<h3>Do I need an appointment?</h3>
+                    Southwest Florida
 
-<p style="margin-top:12px;color:var(--gray);">
+                </p>
 
-Appointments are recommended, but contact us and we'll do our best to accommodate you.
+            </div>
 
-</p>
+            <div>
 
-</div>
+                <h4>
 
-<div class="card">
+                    Quick Links
 
-<h3>How do you determine value?</h3>
+                </h4>
 
-<p style="margin-top:12px;color:var(--gray);">
+                <ul>
 
-We inspect, test, weigh, and compare each item against current precious metal market prices.
+                    <li><a href="#home">Home</a></li>
 
-</p>
+                    <li><a href="#calculator">Calculator</a></li>
 
-</div>
+                    <li><a href="#what-we-buy">What We Buy</a></li>
 
-<div class="card">
+                    <li><a href="#faq">FAQ</a></li>
 
-<h3>Do you buy broken jewelry?</h3>
+                </ul>
 
-<p style="margin-top:12px;color:var(--gray);">
+            </div>
 
-Yes. Broken gold and silver jewelry often still has significant value.
+        </div>
 
-</p>
+        <div class="footer-bottom">
 
-</div>
+            <p>
 
-<div class="card">
+                © 2026 SWFL Gold & Silver Buyers. All Rights Reserved.
 
-<h3>What forms of payment do you offer?</h3>
+            </p>
 
-<p style="margin-top:12px;color:var(--gray);">
+        </div>
 
-Payment is made immediately after an offer is accepted, subject to applicable laws and regulations.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer style="
-padding:80px 8%;
-background:#050505;
-border-top:1px solid rgba(255,255,255,.08);
-">
-
-<div class="container">
-
-<div style="
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:50px;
-">
-
-<div>
-
-<h2 style="margin-bottom:20px;">
-
-SWFL <span style="color:var(--gold);">Gold & Silver Buyers</span>
-
-</h2>
-
-<p style="color:var(--gray);">
-
-Professional precious metal buyer serving Southwest Florida with transparent testing, competitive offers, and immediate payment.
-
-</p>
-
-</div>
-
-<div>
-
-<h3 style="margin-bottom:18px;">Navigation</h3>
-
-<p><a href="#buy">What We Buy</a></p>
-
-<p><a href="#process">Process</a></p>
-
-<p><a href="#calculator">Calculator</a></p>
-
-<p><a href="#faq">FAQ</a></p>
-
-</div>
-
-<div>
-
-<h3 style="margin-bottom:18px;">Contact</h3>
-
-<p>📞 239-560-9063</p>
-
-<p>Southwest Florida</p>
-
-<p>Call or Text Anytime</p>
-
-</div>
-
-</div>
-
-<hr style="margin:50px 0;border-color:rgba(255,255,255,.08);">
-
-<p style="text-align:center;color:#888;">
-
-© 2026 SWFL Gold & Silver Buyers. All Rights Reserved.
-
-</p>
-
-</div>
+    </div>
 
 </footer>
+
+
+
+
+
+<script src="script.js"></script>
+
+</main>
 
 </body>
 
