@@ -1224,3 +1224,24 @@ footer{
     }
 
 }
+/* ==========================================
+   SCROLL ANIMATIONS
+========================================== */
+
+.fade-section{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+.fade-section.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
