@@ -91,7 +91,7 @@ const calculateBtn = document.getElementById("calculateBtn");
 
 // Demo spot price.
 // Replace later with live API.
-let goldSpotPrice = 3400;
+let goldSpotPrice = 4079;
 
 const purityPercent = {
 
