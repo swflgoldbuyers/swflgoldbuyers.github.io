@@ -1257,7 +1257,7 @@ footer{
 
     background:
         linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.70)),
-        url("hero-collage.png");
+        url("hero.png");
 
     background-size: cover;
     background-position: center;
