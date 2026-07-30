@@ -1245,3 +1245,28 @@ footer{
     transform:translateY(0);
 
 }
+.hero-left {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-left::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.70)),
+        url("hero-collage.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+.hero-left > * {
+    position: relative;
+    z-index: 1;
+}
