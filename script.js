@@ -1,170 +1,190 @@
-// ======================================================
-// SWFL GOLD & SILVER BUYERS
-// script.js
-// ======================================================
+// SWFL Gold & Silver Buyers
 
-// ------------------------------
-// Smooth Scrolling
-// ------------------------------
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", e => {
-
-        const target = document.querySelector(link.getAttribute("href"));
-
-        if (!target) return;
-
-        e.preventDefault();
-
-        target.scrollIntoView({
-
-            behavior: "smooth"
-
-        });
-
-    });
-
-});
-
-// ------------------------------
-// Header Scroll Effect
-// ------------------------------
-
-const header = document.querySelector(".header");
-
-window.addEventListener("scroll", () => {
-
-    if (!header) return;
-
-    if (window.scrollY > 50) {
-
-        header.style.background = "rgba(8,8,8,.95)";
-        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.35)";
-
-    } else {
-
-        header.style.background = "rgba(8,8,8,.78)";
-        header.style.boxShadow = "none";
-
-    }
-
-});
-
-// ------------------------------
-// Fade-In Animation
-// ------------------------------
-
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-        }
-
-    });
-
-}, {
-
-    threshold: .15
-
-});
-
-document.querySelectorAll("section").forEach(section => {
-
-    section.classList.add("fade-section");
-
-    observer.observe(section);
-
-});
-// ------------------------------
-// Gold Calculator
-// ------------------------------
-
-const puritySelect = document.getElementById("purity");
-const weightInput = document.getElementById("weight");
-const estimate = document.getElementById("offerAmount");
-const calculateBtn = document.getElementById("calculateBtn");
-
-// Demo spot price.
-// Replace later with live API.
-let goldSpotPrice = 4079;
-
-const purityPercent = {
-
+const PURITY = {
     "10K": 0.417,
     "14K": 0.585,
     "18K": 0.750,
     "22K": 0.917,
     "24K": 1.000
-
 };
 
-if (calculateBtn) {
+const TROY_OUNCE_GRAMS = 31.1035;
+const OFFER_FACTOR = 0.90;
+const FALLBACK_SPOT = 4366;
 
-    calculateBtn.addEventListener("click", () => {
+let goldSpotPrice = FALLBACK_SPOT;
+let selectedPurity = "14K";
 
-        const purity = purityPercent[puritySelect.value];
+const header = document.getElementById("site-header");
+const menuToggle = document.getElementById("menu-toggle");
+const mobileNav = document.getElementById("mobile-nav");
+const purityButtons = document.querySelectorAll(".karat");
+const weightInput = document.getElementById("weight");
+const estimateEl = document.getElementById("offerAmount");
+const calculateBtn = document.getElementById("calculateBtn");
+const spotEl = document.getElementById("spotPrice");
+const heroSpotEl = document.getElementById("heroSpotPrice");
+const spotUpdatedEl = document.getElementById("spotUpdated");
 
-        const grams = parseFloat(weightInput.value);
-
-        if (isNaN(grams) || grams <= 0) {
-
-            estimate.textContent = "--";
-
-            return;
-
-        }
-
-        // Convert spot price (troy oz) to grams
-        const gramPrice = goldSpotPrice / 31.1035;
-
-        // Estimated offer (90%)
-        const offer = grams * purity * gramPrice * 0.90;
-
-        estimate.textContent =
-
-            "$" + offer.toFixed(2);
-
+function formatMoney(value, digits = 2) {
+    return value.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
     });
-
-}
-// ------------------------------
-// Spot Price Display
-// ------------------------------
-
-const spotElement = document.getElementById("spotPrice");
-
-function updateSpotPrice() {
-
-    if (!spotElement) return;
-
-    spotElement.textContent =
-
-        "$" + goldSpotPrice.toLocaleString();
-
 }
 
-updateSpotPrice();
-// ------------------------------
-// Button Hover Animation
-// ------------------------------
+function setSpotDisplay(price) {
+    const rounded = Math.round(price);
+    const formatted = formatMoney(rounded, 0);
 
-document.querySelectorAll(".btn").forEach(button => {
+    if (spotEl) spotEl.textContent = formatted;
+    if (heroSpotEl) heroSpotEl.textContent = formatted;
+}
 
-    button.addEventListener("mouseenter", () => {
+function closeMenu() {
+    if (!header || !menuToggle || !mobileNav) return;
+    header.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+    mobileNav.hidden = true;
+}
 
-        button.style.transform = "translateY(-3px)";
+function openMenu() {
+    header.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close menu");
+    mobileNav.hidden = false;
+}
 
+if (menuToggle && mobileNav && header) {
+    menuToggle.addEventListener("click", () => {
+        if (mobileNav.hidden) openMenu();
+        else closeMenu();
     });
+}
 
-    button.addEventListener("mouseleave", () => {
-
-        button.style.transform = "";
-
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+        const id = link.getAttribute("href");
+        if (!id || id === "#") return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        event.preventDefault();
+        closeMenu();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
-
 });
+
+window.addEventListener("scroll", () => {
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+}, { passive: true });
+
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+});
+
+function calculateOffer() {
+    if (!estimateEl || !weightInput) return;
+
+    const grams = parseFloat(weightInput.value);
+    if (isNaN(grams) || grams <= 0) {
+        estimateEl.textContent = "—";
+        return;
+    }
+
+    const purity = PURITY[selectedPurity];
+    const gramPrice = goldSpotPrice / TROY_OUNCE_GRAMS;
+    const offer = grams * purity * gramPrice * OFFER_FACTOR;
+    estimateEl.textContent = formatMoney(offer);
+}
+
+purityButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        selectedPurity = button.dataset.purity;
+        purityButtons.forEach((item) => {
+            const active = item === button;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        if (weightInput && weightInput.value) calculateOffer();
+    });
+});
+
+if (calculateBtn) {
+    calculateBtn.addEventListener("click", calculateOffer);
+}
+
+if (weightInput) {
+    weightInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            calculateOffer();
+        }
+    });
+}
+
+async function fetchSpotPrice() {
+    const endpoints = [
+        {
+            url: "https://api.gold-api.com/price/XAU",
+            parse: (data) => Number(data.price)
+        },
+        {
+            url: "https://data-asg.goldprice.org/dbXRates/USD",
+            parse: (data) => Number(data.items && data.items[0] && data.items[0].xauPrice)
+        }
+    ];
+
+    for (const endpoint of endpoints) {
+        try {
+            const response = await fetch(endpoint.url, { cache: "no-store" });
+            if (!response.ok) continue;
+            const data = await response.json();
+            const price = endpoint.parse(data);
+            if (Number.isFinite(price) && price > 0) {
+                goldSpotPrice = price;
+                setSpotDisplay(price);
+                if (spotUpdatedEl) {
+                    const time = new Date().toLocaleTimeString("en-US", {
+                        hour: "numeric",
+                        minute: "2-digit"
+                    });
+                    spotUpdatedEl.textContent = "Updated " + time;
+                }
+                if (weightInput && weightInput.value) calculateOffer();
+                return;
+            }
+        } catch (error) {
+            // Try the next source.
+        }
+    }
+
+    setSpotDisplay(goldSpotPrice);
+    if (spotUpdatedEl) {
+        spotUpdatedEl.textContent = "Market reference rate";
+    }
+}
+
+setSpotDisplay(goldSpotPrice);
+fetchSpotPrice();
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reduceMotion && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+    document.querySelectorAll("main section:not(.hero)").forEach((section) => {
+        section.classList.add("reveal");
+        observer.observe(section);
+    });
+}
