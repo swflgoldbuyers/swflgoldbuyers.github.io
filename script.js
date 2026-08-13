@@ -9,10 +9,12 @@ const PURITY = {
 };
 
 const TROY_OUNCE_GRAMS = 31.1035;
-const OFFER_FACTOR = 0.90;
-const FALLBACK_SPOT = 4366;
+const OFFER_FACTOR = 0.80;
+const CACHE_KEY = "swflGoldSpot";
+const LIVE_PRICE_URL = "https://api.gold-api.com/price/XAU";
 
-let goldSpotPrice = FALLBACK_SPOT;
+let goldSpotPrice = null;
+let priceIsLive = false;
 let selectedPurity = "14K";
 
 const header = document.getElementById("site-header");
@@ -25,6 +27,10 @@ const calculateBtn = document.getElementById("calculateBtn");
 const spotEl = document.getElementById("spotPrice");
 const heroSpotEl = document.getElementById("heroSpotPrice");
 const spotUpdatedEl = document.getElementById("spotUpdated");
+const liveDots = [
+    document.getElementById("spotLiveDot"),
+    document.getElementById("heroLiveDot")
+].filter(Boolean);
 
 function formatMoney(value, digits = 2) {
     return value.toLocaleString("en-US", {
@@ -35,12 +41,92 @@ function formatMoney(value, digits = 2) {
     });
 }
 
-function setSpotDisplay(price) {
-    const rounded = Math.round(price);
-    const formatted = formatMoney(rounded, 0);
+function formatClock(date) {
+    return date.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit"
+    });
+}
 
+function readCache() {
+    try {
+        const raw = localStorage.getItem(CACHE_KEY);
+        if (!raw) return null;
+        const data = JSON.parse(raw);
+        if (!Number.isFinite(data.price) || data.price <= 0 || !data.at) return null;
+        return data;
+    } catch (error) {
+        return null;
+    }
+}
+
+function writeCache(price) {
+    try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({
+            price: price,
+            at: Date.now()
+        }));
+    } catch (error) {
+        // Ignore storage failures.
+    }
+}
+
+function setLiveDots(on) {
+    liveDots.forEach((dot) => {
+        dot.classList.toggle("is-off", !on);
+    });
+}
+
+function setCalculatorEnabled(enabled) {
+    if (calculateBtn) {
+        calculateBtn.disabled = !enabled;
+        calculateBtn.setAttribute("aria-disabled", enabled ? "false" : "true");
+    }
+    if (weightInput) weightInput.disabled = !enabled;
+    document.body.classList.toggle("price-unavailable", !enabled);
+}
+
+function showPrice(value) {
+    const formatted = formatMoney(Math.round(value), 0);
     if (spotEl) spotEl.textContent = formatted;
     if (heroSpotEl) heroSpotEl.textContent = formatted;
+}
+
+function setLivePrice(price) {
+    goldSpotPrice = price;
+    priceIsLive = true;
+    showPrice(price);
+    setLiveDots(true);
+    setCalculatorEnabled(true);
+    writeCache(price);
+    if (spotUpdatedEl) {
+        spotUpdatedEl.textContent = "Updated automatically from market data";
+    }
+    if (weightInput && weightInput.value) calculateOffer();
+}
+
+function setUnavailable() {
+    goldSpotPrice = null;
+    priceIsLive = false;
+    setLiveDots(false);
+    setCalculatorEnabled(false);
+    if (estimateEl) estimateEl.textContent = "—";
+
+    const cached = readCache();
+    if (cached) {
+        showPrice(cached.price);
+        if (spotUpdatedEl) {
+            const when = formatClock(new Date(cached.at));
+            spotUpdatedEl.textContent = "Last available " + when + " — live market price temporarily unavailable";
+        }
+        return;
+    }
+
+    if (spotEl) spotEl.textContent = "—";
+    if (heroSpotEl) heroSpotEl.textContent = "—";
+    if (spotUpdatedEl) {
+        spotUpdatedEl.textContent = "Live market price temporarily unavailable.";
+    }
 }
 
 function closeMenu() {
@@ -86,8 +172,17 @@ window.addEventListener("resize", () => {
     if (window.innerWidth > 1100) closeMenu();
 });
 
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+});
+
 function calculateOffer() {
     if (!estimateEl || !weightInput) return;
+
+    if (!priceIsLive || !Number.isFinite(goldSpotPrice) || goldSpotPrice <= 0) {
+        estimateEl.textContent = "—";
+        return;
+    }
 
     const grams = parseFloat(weightInput.value);
     if (isNaN(grams) || grams <= 0) {
@@ -127,48 +222,19 @@ if (weightInput) {
 }
 
 async function fetchSpotPrice() {
-    const endpoints = [
-        {
-            url: "https://api.gold-api.com/price/XAU",
-            parse: (data) => Number(data.price)
-        },
-        {
-            url: "https://data-asg.goldprice.org/dbXRates/USD",
-            parse: (data) => Number(data.items && data.items[0] && data.items[0].xauPrice)
-        }
-    ];
-
-    for (const endpoint of endpoints) {
-        try {
-            const response = await fetch(endpoint.url, { cache: "no-store" });
-            if (!response.ok) continue;
-            const data = await response.json();
-            const price = endpoint.parse(data);
-            if (Number.isFinite(price) && price > 0) {
-                goldSpotPrice = price;
-                setSpotDisplay(price);
-                if (spotUpdatedEl) {
-                    const time = new Date().toLocaleTimeString("en-US", {
-                        hour: "numeric",
-                        minute: "2-digit"
-                    });
-                    spotUpdatedEl.textContent = "Updated " + time;
-                }
-                if (weightInput && weightInput.value) calculateOffer();
-                return;
-            }
-        } catch (error) {
-            // Try the next source.
-        }
-    }
-
-    setSpotDisplay(goldSpotPrice);
-    if (spotUpdatedEl) {
-        spotUpdatedEl.textContent = "Market reference rate";
+    try {
+        const response = await fetch(LIVE_PRICE_URL, { cache: "no-store" });
+        if (!response.ok) throw new Error("price request failed");
+        const data = await response.json();
+        const price = Number(data.price);
+        if (!Number.isFinite(price) || price <= 0) throw new Error("invalid price");
+        setLivePrice(price);
+    } catch (error) {
+        setUnavailable();
     }
 }
 
-setSpotDisplay(goldSpotPrice);
+setCalculatorEnabled(false);
 fetchSpotPrice();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
