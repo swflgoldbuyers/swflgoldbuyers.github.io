@@ -82,8 +82,8 @@ window.addEventListener("scroll", () => {
     header.classList.toggle("is-scrolled", window.scrollY > 12);
 }, { passive: true });
 
-window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1100) closeMenu();
 });
 
 function calculateOffer() {
