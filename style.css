@@ -265,16 +265,9 @@ p {
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    gap: 0.55rem;
     min-width: 0;
-}
-
-.header-logo {
-    display: block;
-    height: 46px;
-    width: auto;
-    max-width: 168px;
-    object-fit: contain;
 }
 
 .logo-mark {
@@ -582,11 +575,15 @@ p {
     background: radial-gradient(ellipse, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.12) 55%, transparent 74%);
 }
 
+.hero-visual .brand-overlay::before {
+    width: min(90%, 600px);
+}
+
 .brand-mark {
     position: relative;
-    width: min(56%, 300px);
+    width: min(84%, 450px);
     height: auto;
-    max-width: 300px;
+    max-width: 450px;
     object-fit: contain;
     filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.45));
 }
@@ -1036,8 +1033,12 @@ body.price-unavailable .estimate-result strong {
     filter: saturate(0.85) contrast(1.1) brightness(0.62);
 }
 
+.local-photo .brand-overlay::before {
+    width: min(90%, 500px);
+}
+
 .local-photo .brand-mark {
-    width: min(70%, 240px);
+    width: min(88%, 300px);
 }
 
 .local-copy p {
@@ -1365,7 +1366,11 @@ body.price-unavailable .estimate-result strong {
     }
 
     .brand-mark {
-        width: min(52%, 180px);
+        width: min(78%, 270px);
+    }
+
+    .local-photo .brand-mark {
+        width: min(88%, 270px);
     }
 
     .hero-visual .brand-overlay {
@@ -1377,9 +1382,8 @@ body.price-unavailable .estimate-result strong {
         max-width: none;
     }
 
-    .header-logo {
-        height: 38px;
-        max-width: 128px;
+    .logo-name {
+        display: none;
     }
 
     .hero-copy h1 {
@@ -1432,9 +1436,8 @@ body.price-unavailable .estimate-result strong {
         gap: 0.75rem;
     }
 
-    .header-logo {
-        height: 34px;
-        max-width: 108px;
+    .logo-name {
+        display: none;
     }
 
     .header-phone-label {
