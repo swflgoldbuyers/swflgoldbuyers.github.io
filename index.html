@@ -191,9 +191,9 @@
                 <div class="hero-copy">
                     <p class="eyebrow">SWFL’s Local Precious Metals Buyer</p>
                     <h1>
-                        Gold &amp; Silver<br>
-                        Worth More<br>
-                        Than You Think.
+                        Know What Your<br>
+                        Precious Metals<br>
+                        Are Worth.
                     </h1>
                     <p class="lede">
                         Receive a professional evaluation based on current market prices.
@@ -217,10 +217,13 @@
                         height="1844"
                         fetchpriority="high"
                         decoding="async">
+                    <div class="brand-overlay" aria-hidden="true">
+                        <img src="logo.svg" alt="" class="brand-mark">
+                    </div>
                     <figcaption class="hero-spot">
-                        <span class="live-dot" aria-hidden="true"></span>
+                        <span class="live-dot" id="heroLiveDot" aria-hidden="true"></span>
                         <span>Gold spot</span>
-                        <strong id="heroSpotPrice">Loading…</strong>
+                        <strong id="heroSpotPrice">—</strong>
                         <span class="hero-spot-unit">/ troy oz</span>
                     </figcaption>
                 </figure>
@@ -241,11 +244,11 @@
                         <h3>Gold Spot Price</h3>
                         <p class="spot-figure" id="spotPrice">—</p>
                         <p class="spot-meta">
-                            <span class="live-dot" aria-hidden="true"></span>
+                            <span class="live-dot" id="spotLiveDot" aria-hidden="true"></span>
                             Per troy ounce
-                            <span class="spot-updated" id="spotUpdated">Updated from live market data</span>
+                            <span class="spot-updated" id="spotUpdated">Updated automatically from market data</span>
                         </p>
-                        <p class="spot-note">Spot is the wholesale benchmark for fine gold. Jewelry and scrap are paid on tested purity and weight, not the full spot price.</p>
+                        <p class="spot-note">Spot is a market reference for fine gold, not a guaranteed purchase price. Jewelry and scrap are paid on tested purity and weight.</p>
                     </article>
 
                     <article class="calc-panel">
@@ -275,9 +278,9 @@
                         <button type="button" id="calculateBtn" class="btn btn-gold calc-submit">Estimate</button>
 
                         <div class="estimate-result" aria-live="polite">
-                            <span>Estimated offer</span>
+                            <span>Estimated Offer</span>
                             <strong id="offerAmount">$0.00</strong>
-                            <small>Estimate only. Actual offers depend on testing, purity, stones, and condition.</small>
+                            <small>Estimate only. Actual offers may vary based on verified purity, testing, weight, stones, solder or other materials, condition, and final evaluation.</small>
                         </div>
                     </article>
                 </div>
@@ -318,7 +321,7 @@
 
                 <div class="catalog">
                     <article class="catalog-feature">
-                        <img src="media/gold-jewelry.jpg" alt="Gold chain being weighed on a professional jewelry scale" width="1400" height="1050" loading="lazy" decoding="async">
+                        <img src="media/gold-jewelry.jpg" alt="Gold chain being weighed on a professional jewelry scale" width="1050" height="1400" loading="lazy" decoding="async">
                         <div class="catalog-caption">
                             <h3>Gold Jewelry</h3>
                             <p>Rings, chains, bracelets, earrings, broken jewelry, and scrap gold.</p>
@@ -332,7 +335,7 @@
                         </div>
                     </article>
                     <article class="catalog-feature">
-                        <img src="media/bullion.jpg" alt="Silver bullion bars being evaluated on a digital scale" width="1400" height="1050" loading="lazy" decoding="async">
+                        <img src="media/bullion.jpg" alt="Silver bullion bars being evaluated on a digital scale" width="1050" height="1400" loading="lazy" decoding="async">
                         <div class="catalog-caption">
                             <h3>Coins &amp; Bullion</h3>
                             <p>Gold and silver coins, bars, rounds, and investment-grade bullion.</p>
@@ -415,7 +418,7 @@
                     </ol>
                 </div>
                 <figure class="process-photo">
-                    <img src="media/evaluation.jpg" alt="Gold testing acids, a touchstone, and a jeweler’s loupe used during evaluation" width="1400" height="1050" loading="lazy" decoding="async">
+                    <img src="media/evaluation.jpg" alt="Gold testing acids, a touchstone, and a jeweler’s loupe used during evaluation" width="1050" height="1400" loading="lazy" decoding="async">
                     <figcaption>Testing is done in front of you, so the evaluation stays transparent.</figcaption>
                 </figure>
             </div>
@@ -453,6 +456,9 @@
             <div class="container local-layout">
                 <figure class="local-photo">
                     <img src="media/hero-local.jpg" alt="Stylized view of the Southwest Florida coastline" width="615" height="811" loading="lazy" decoding="async">
+                    <div class="brand-overlay" aria-hidden="true">
+                        <img src="logo.svg" alt="" class="brand-mark">
+                    </div>
                 </figure>
                 <div class="local-copy">
                     <p class="eyebrow">Southwest Florida</p>
